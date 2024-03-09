@@ -14,17 +14,35 @@ export async function createGitMeta(
 ): Promise<GitMetadata | undefined> {
   // If a Git repository is already connected via `vc git`, use that remote url
   let remoteUrl;
+  console.log({
+    projectLink: project?.link,
+  });
+
   if (project?.link) {
     // in the form of org/repo
     const { repo } = project.link;
+
+    console.log({
+      repo,
+    });
 
     const remoteUrls = await getRemoteUrls(
       join(directory, '.git/config'),
       output
     );
+
+    console.log({
+      directory,
+      remoteUrls,
+    });
+
     if (remoteUrls) {
       for (const urlValue of Object.values(remoteUrls)) {
         if (urlValue.includes(repo)) {
+          console.log({
+            urlValue,
+          });
+
           remoteUrl = urlValue;
         }
       }
@@ -34,12 +52,23 @@ export async function createGitMeta(
   // If we couldn't get a remote url from the connected repo, default to the origin url
   if (!remoteUrl) {
     remoteUrl = await getOriginUrl(join(directory, '.git/config'), output);
+    console.log(
+      {
+        remoteUrl,
+      },
+      'getOriginalUrl'
+    );
   }
 
   const [commitResult, dirtyResult] = await Promise.allSettled([
     getLastCommit(directory),
     isDirty(directory),
   ]);
+
+  console.log({
+    commitResult,
+    dirtyResult,
+  });
 
   if (commitResult.status === 'rejected') {
     output.debug(
@@ -57,6 +86,12 @@ export async function createGitMeta(
 
   const dirty = dirtyResult.value;
   const commit = commitResult.value;
+
+  console.log({
+    remoteUrl,
+    commit,
+    dirty,
+  });
 
   return {
     remoteUrl: remoteUrl || undefined,

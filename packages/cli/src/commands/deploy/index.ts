@@ -464,6 +464,12 @@ export default async (client: Client): Promise<number> => {
   );
 
   const gitMetadata = await createGitMeta(cwd, output, project);
+  console.log(
+    {
+      gitMetadata,
+    },
+    'LAST'
+  );
 
   // Merge dotenv config, `env` from vercel.json, and `--env` / `-e` arguments
   const deploymentEnv = Object.assign(
