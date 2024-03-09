@@ -89,7 +89,7 @@ describe('parseRepoUrl', () => {
     expect(repoInfo?.repo).toEqual('next.js');
   });
   it('should parse github https url', () => {
-    const repoInfo = parseRepoUrl('https://github.com/vercel/vercel.git');
+    const repoInfo = parseRepoUrl('https://github.com/hussamkhatib/vercel.git');
     expect(repoInfo).toBeTruthy();
     expect(repoInfo?.provider).toEqual('github');
     expect(repoInfo?.org).toEqual('vercel');
