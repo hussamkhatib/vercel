@@ -887,7 +887,9 @@ const addProcessEnv = async (
       throw new Error(
         `No value specified for env variable ${chalk.bold(
           `"${chalk.bold(key)}"`
-        )} and it was not found in your env. If you meant to specify an environment to deploy to, use ${param('--target')}`
+        )} and it was not found in your env. If you meant to specify an environment to deploy to, use ${param(
+          '--target'
+        )}`
       );
     }
   }
