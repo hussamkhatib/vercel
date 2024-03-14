@@ -7,7 +7,7 @@
   "homepage": "https://github.com/vercel/vercel/blob/main/DEVELOPING_A_RUNTIME.md",
   "repository": {
     "type": "git",
-    "url": "https://github.com/vercel/vercel.git",
+    "url": "https://github.com/hussamkhatib/vercel.git",
     "directory": "packages/now-build-utils"
   },
   "scripts": {
