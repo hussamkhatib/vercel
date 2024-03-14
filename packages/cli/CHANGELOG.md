@@ -1,5 +1,15 @@
 # vercel
 
+## 0.1.0
+
+### Minor Changes
+
+- init ([`6318f89c5`](https://github.com/vercel/vercel/commit/6318f89c5b6b0382c3ba0001a1392034cbd5d680))
+
+### Patch Changes
+
+- triggering a release ([`9340a79a7`](https://github.com/vercel/vercel/commit/9340a79a710078fcf6242367e89ace3277688adf))
+
 ## 33.2.0
 
 ### Minor Changes
