@@ -1,6 +1,6 @@
 {
   "name": "hussam-vercel",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "preferGlobal": true,
   "license": "Apache-2.0",
   "description": "The command-line interface for Vercel",
