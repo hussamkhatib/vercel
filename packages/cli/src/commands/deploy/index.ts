@@ -462,6 +462,8 @@ export default async (client: Client): Promise<number> => {
   );
 
   const gitMetadata = await createGitMeta(cwd, output, project);
+  debug(gitMetadata);
+
   // #endregion
 
   // #region Env vars validation
